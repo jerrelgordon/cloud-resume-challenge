@@ -1,0 +1,54 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181A1B;
+    color: #636363;
+    line-height: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+
+/* Specific styles for the homepage (index.html) */
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #c4c4c4;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #c4c4c4;
+}
+
+.title {
+    font-size: 1.5em;
+    color: #7f8c8d;
+}
+
+.title-headers {
+    font-size: 2em;
+    color: #7f8c8d;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    
+}
