@@ -38,13 +38,13 @@ jobs:
 
     # 6. Sync build files to S3
     - name: Sync build files to S3
-      run: aws s3 sync ./public/ s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*"
+      run: aws s3 sync ./public/ s3://${{ vars.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*"
       # Sync the build output (in the 'public/' directory) to the S3 bucket
 
     # 7. Invalidate CloudFront cache (optional)
     - name: Invalidate CloudFront cache
       run: |
         aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
+          --distribution-id ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
           --paths "/*"
       # This invalidates the CloudFront cache for all files
