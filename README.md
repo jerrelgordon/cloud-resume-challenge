@@ -5,6 +5,10 @@
 Hello! I'm **Jerrel Gordon**, a Software Engineer with a background in **Control Systems** within the **manufacturing industry**. I studied **Computer Science** at the **Florida Institute of Technology**, graduating **magna cum laude**. During my time there, I served as president of **Upsilon Pi Epsilon**, the Computer Science honor society. My concentration was in **Cybersecurity**, and I focused on research involving **DNS (DOH, DOT, DNSSEC)**, comparing security and efficiency using **NFV** and **SDN** concepts, while leveraging **OpenStack** for implementation. This research ignited my passion for **Cloud Computing**, leading me to dive deeper into AWS services and cloud architecture.
 
 So here is my version of the **Cloud Resume Challenge**! 🎉
+
+My website: **https://jerrel.link**
+
+Read more about the challenge here:
 **https://cloudresumechallenge.dev/docs/the-challenge/aws/**
 ---
 
