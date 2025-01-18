@@ -1,4 +1,4 @@
-name: Deploy to S3 and Invalidate CloudFront
+name: Build and Deploy Svelte to S3 and Invalidate CloudFront
 
 on:
   push:
@@ -6,29 +6,45 @@ on:
       - main  # Trigger the workflow on push to the main branch
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    
+  build_and_deploy:
+    runs-on: ubuntu-latest  # Runs on an Ubuntu environment
+
     steps:
+    # 1. Checkout the code
     - name: Checkout code
-      uses: actions/checkout@v2  # Checks out the code from the repository
-      
+      uses: actions/checkout@v2  # This checks out the code from the repository
+
+    # 2. Set up Node.js
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Use the version of Node.js your Svelte project requires
+
+    # 3. Install dependencies
+    - name: Install dependencies
+      run: npm install  # Installs the dependencies from package.json
+
+    # 4. Build the Svelte project
+    - name: Build the Svelte project
+      run: npm run build  # Runs the build script that generates build artifacts in the 'public/' folder
+
+    # 5. Set up AWS CLI
     - name: Set up AWS CLI
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: 'us-east-1'
+        aws-region: 'us-east-1'  # Use your S3 bucket's region
 
-    - name: Sync files to S3
-      run: aws s3 sync ./ s3://${{ vars.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*"
-      # 'aws s3 sync' uploads all files except the ones in .git and .github
+    # 6. Sync build files to S3
+    - name: Sync build files to S3
+      run: aws s3 sync ./public/ s3://${{ secrets.AWS_S3_BUCKET }} --delete --exclude ".git/*" --exclude ".github/*"
+      # Sync the build output (in the 'public/' directory) to the S3 bucket
 
+    # 7. Invalidate CloudFront cache (optional)
     - name: Invalidate CloudFront cache
       run: |
         aws cloudfront create-invalidation \
-          --distribution-id ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
+          --distribution-id ${{ secrets.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
           --paths "/*"
       # This invalidates the CloudFront cache for all files
-      
-
