@@ -4,6 +4,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+svelteREADME.md
 .npm/
 .env
 .DS_Store
