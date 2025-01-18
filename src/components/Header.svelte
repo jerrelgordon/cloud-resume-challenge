@@ -18,7 +18,6 @@
   onMount(() => {
     document.addEventListener('click', closeMenuIfClickedOutside);
 
-    // Stop pulsing after a short delay (e.g., 3 seconds) to not distract the user for too long
     setTimeout(() => {
       isPulsing = false;
     }, 3000); // Stop pulsing after 3 seconds
@@ -54,8 +53,8 @@
   /* Styling for the entire header */
   header {
     display: flex;
-    justify-content: space-between; /* Space out the elements (left and right) */
-    align-items: center; /* Vertically center the items */
+    justify-content: space-between; /* Space out the elements */
+    align-items: center;
     background-color: #333;
     color: white;
     padding: 10px 20px;
@@ -64,7 +63,7 @@
     left: 0;
     width: 100%;
     z-index: 10;
-    height: 60px; /* Fixed height for header */
+    height: 60px; 
   }
 
   /* Styling for the left part of the header */
@@ -105,7 +104,7 @@
     flex-direction: column;
     position: absolute;
     top: 60px; /* Position below the header */
-    right: 10px; /* Align the menu to the right */
+    right: 10px; 
     background-color: #333;
     padding: 10px;
     border-radius: 8px;

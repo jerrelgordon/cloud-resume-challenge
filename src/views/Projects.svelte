@@ -6,27 +6,75 @@
   <h1>Projects</h1>
 
   <section class="project-entry">
+    <h3>Cloud Resume Challenge</h3>
+    <div class="project-details">
+      <div class="detail">
+        <strong>GitHub Link:</strong> 
+        <a href="https://github.com/jerrelgordon/cloud-resume-challenge" target="_blank">AWS Cloud Resume Challenge Repository</a>
+      </div>
+      <div class="detail">
+        <strong>Tools Used:</strong> 
+        <p>Svelte, Cloudfront, S3, Lambda, APIGateway, DynamoDB, Route53, ACM, IAM, GitHub Actions</p>
+      </div>
+      <div class="detail">
+        <strong>Project Summary:</strong> 
+        <p>Built a state-driven, single-page web app with the Svelte framework, utilizing AWS cloud services such as S3 for static hosting, Cloudfront for distribution, Lambda and APIGateway for serverless functionality. Set up a CI/CD pipeline using GitHub Actions coupled with a secure AWS IAM user.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-entry">
     <h3>Metasploit Module</h3>
-    <p class="project-description">Developed a specialized module for the open-source Metasploit framework, enabling users to seamlessly retrieve bookmarks on the target machine post-exploitation.</p>
-    <p class="project-description">Tailored for Chrome, Edge, Explorer, and Opera browsers.</p>
+    <div class="project-details">
+      <div class="detail">
+        <strong>GitHub Link:</strong> 
+        <a href="https://github.com/jerrelgordon/metasploit-get-bookmarks-module" target="_blank">MetaSploit: Get_Bookmarks.rb</a>
+      </div>
+      <div class="detail">
+        <strong>Tools Used:</strong> 
+        <p>Ruby</p>
+      </div>
+      <div class="detail">
+        <strong>Project Summary:</strong> 
+        <p>Developed a specialized module for the open-source Metasploit framework, enabling users to seamlessly retrieve bookmarks on the target machine post-exploitation. Tailored for Chrome, Edge, Explorer, and Opera browsers.</p>
+      </div>
+    </div>
   </section>
 
   <section class="project-entry">
     <h3>Autonomous Exploit Generator</h3>
-    <p class="project-description">Collaborated with a reverse engineering team developing a tool for discovering and exploiting vulnerabilities.</p>
-    <p class="project-description">Utilized techniques like return-oriented programming, format strings, and symbolic execution.</p>
+    <div class="project-details">
+      <div class="detail">
+        <strong>GitHub Link:</strong> 
+        <a href="https://github.com/jerrelgordon" target="_blank">Jerrel's Github</a>
+      </div>
+      <div class="detail">
+        <strong>Tools Used:</strong> 
+        <p>Binary Ninja, Python</p>
+      </div>
+      <div class="detail">
+        <strong>Project Summary:</strong> 
+        <p>Collaborated with a reverse engineering team to develop a tool for discovering and exploiting vulnerabilities. Utilized techniques like return-oriented programming, format strings, and symbolic execution to generate autonomous exploits.</p>
+      </div>
+    </div>
   </section>
 
   <section class="project-entry">
     <h3>Windows Keylogger (Stealthy)</h3>
-    <p class="project-description">Implemented MITRE ATT&CK Framework concepts to create a stealthy keylogger.</p>
-    <p class="project-description">Evasion of virus detection, persistence establishment, and program partitioning/assembly execution.</p>
-    <p class="project-description">Currently expanding functionality to support arbitrary command execution.</p>
-  </section>
-
-  <section class="project-entry">
-    <h3>Cloud Resume Challenge</h3>
-    <p class="project-description">****In Progress****</p>
+    <div class="project-details">
+      <div class="detail">
+        <strong>GitHub Link:</strong> 
+        <a href="https://github.com/jerrelgordon" target="_blank">Jerrel's Github</a>
+      </div>
+      <div class="detail">
+        <strong>Tools Used:</strong> 
+        <p>C, Python</p>
+      </div>
+      <div class="detail">
+        <strong>Project Summary:</strong> 
+        <p>Implemented MITRE ATT&CK Framework concepts to create a stealthy keylogger with evasion techniques for virus detection and persistence establishment. Currently expanding functionality to support arbitrary command execution and more sophisticated evasion methods.</p>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -39,7 +87,7 @@
     margin: 0 auto;
     background-color: #383838;
     border-radius: 8px;
-    color: #dddddd; /* Light text color */
+    color: #dddddd;
   }
 
   h1 {
@@ -51,29 +99,49 @@
 
   .project-entry {
     margin-bottom: 30px;
-    border-left: 4px solid #ccc;
+    border-left: 4px solid #8a8a8a;
     padding-left: 20px;
     background-color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
   .project-entry h3 {
     font-size: 1.8rem;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
-  .project-description {
-    font-size: 1.2rem;
+  .project-details {
+    margin-left: 20px;
+  }
+
+  .detail {
+    font-size: 1.1rem;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .detail strong {
+    color: #333;
+    font-weight: bold;
+  }
+
+  .detail a {
+    color: #2b81b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .detail a:hover {
+    color: #333;
   }
 
   .project-entry:hover {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
+    transform: translateX(10px);
   }
 
   /* Mobile responsiveness */
@@ -86,11 +154,16 @@
       font-size: 2rem;
     }
 
-    h3 {
-      font-size: 1.4rem;
+    .project-entry {
+      padding: 15px;
+      margin-bottom: 20px;
     }
 
-    .project-description {
+    .project-entry h3 {
+      font-size: 1.6rem;
+    }
+
+    .detail {
       font-size: 1rem;
     }
   }
@@ -100,11 +173,11 @@
       font-size: 1.8rem;
     }
 
-    h3 {
-      font-size: 1.2rem;
+    .project-entry h3 {
+      font-size: 1.4rem;
     }
 
-    .project-description {
+    .detail {
       font-size: 0.9rem;
     }
   }

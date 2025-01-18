@@ -8,8 +8,8 @@
 
   <section class="skills-category">
     <h2>Programming Languages</h2>
-    <ul>
-      <li>C# (.NET 6, 7, 8), Blazor</li>
+    <ul class="service-list">
+      <li>C#, .NET</li>
       <li>Python</li>
       <li>JavaScript / Node.js</li>
       <li>C / C++</li>
@@ -21,17 +21,16 @@
 
   <section class="skills-category">
     <h2>Web Development & Frameworks</h2>
-    <ul>
+    <ul class="service-list">
+      <li>Svelte</li>
       <li>Blazor (C#)</li>
-      <li>RESTful APIs</li>
-      <li>Node.js (JavaScript)</li>
       <li>WordPress</li>
     </ul>
   </section>
 
   <section class="skills-category">
     <h2>Database Technologies</h2>
-    <ul>
+    <ul class="service-list">
       <li>PostgreSQL</li>
       <li>DynamoDB</li>
     </ul>
@@ -39,37 +38,36 @@
 
   <section class="skills-category">
     <h2>Cloud & AWS Services</h2>
-    <ul>
+    <ul class="service-list">
+      <li>OpenStack</li>
       <li>AWS Simple Storage Service (S3)</li>
       <li>AWS Elastic Compute Cloud (EC2)</li>
       <li>AWS CloudFront (CDN)</li>
-      <li>AWS CloudWatch</li>
-      <li>AWS DynamoDB (NoSQL)</li>
+      <li>AWS Lambda</li>
+      <li>AWS APIGateway</li>
+      <li>AWS DynamoDB (NOSQL)</li>
+      <li>AWS Identity & Access Management (IAM)</li>
+      <li>AWS Route53</li>
+      <li>AWS Certificate Manager (ACM)</li>
     </ul>
   </section>
 
   <section class="skills-category">
-    <h2>Operating Systems & Platforms</h2>
-    <ul>
+    <h2>Operating Systems</h2>
+    <ul class="service-list">
       <li>Ubuntu</li>
       <li>Kali Linux</li>
-      <li>OpenStack (Cloud Infrastructure)</li>
+      <li>Windows</li>
     </ul>
   </section>
 
   <section class="skills-category">
-    <h2>DevOps & Containers</h2>
-    <ul>
-      <li>Docker</li>
-    </ul>
-  </section>
-
-  <section class="skills-category">
-    <h2>Security & Networking</h2>
-    <ul>
+    <h2>Additional Skills</h2>
+    <ul class="service-list">
+      <li>Git</li>
       <li>Penetration Testing</li>
       <li>WireShark, NetSpot (Network Traffic Analysis)</li>
-      <li>MetaSploit (check out the Module I added! :))</li>
+      <li>MetaSploit (check out the <a href="https://github.com/jerrelgordon/metasploit-get-bookmarks-module" target="_blank">Module</a> I added! :))</li>
       <li>Autopsy, BinWalk (Memory Forensics)</li>
     </ul>
   </section>
@@ -101,6 +99,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: left;
+    transition: background-color 0.3s ease;
   }
 
   .skills-category h2 {
@@ -118,19 +117,35 @@
     font-size: 1.2rem;
     color: #555;
     margin: 5px 0;
-    padding-left: 30px; /* Add space for the arrow */
+    padding-left: 30px;
     position: relative;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .skills-category li a {
+    color: #2b81b3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .skills-category li a:hover {
+    color: #333;
   }
 
   /* Adding arrows to the list items */
   .skills-category li::before {
-    content: '→'; /* Right arrow symbol */
+    content: '➤';
     position: absolute;
     left: 0;
-    color: #555;
+    color: #3ad1f7; 
     font-size: 1.2rem;
     margin-right: 10px;
     top: 0;
+  }
+
+  .skills-category li:hover {
+    color: #868686;
+    padding-left: 35px; /* Move over slightly when hovered */
   }
 
   .skills-category:hover {
